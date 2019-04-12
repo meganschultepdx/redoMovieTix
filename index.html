@@ -11,20 +11,34 @@
   <body class="container">
     <h1>Online Tickets for Acedemy Theater</h1>
     <h2>Select a Movie, Showing Time and movie go-er age range to see ticket prices and place order.</h2>
-    <div id="Movies">
-      <ul>
-        <li>Wizards</li>
-        <li>Conan the Barbarian</li>
-        <li>Zardoz</li>
-        <li>The Dark Crystal</li>
-      </ul>
+    <form id="ticketForm">
+      <div id ="movies" class="form-group">
+        <h3>Please Select One Movie:</h3>
+        <input type="checkbox" name="movieTitle" value="Conan"> Conan the Barbarian (1982)<br>
+        <input type="checkbox" name="movieTitle" value="petSematary"> Pet Sematary (2019)<br>
+        <input type="checkbox" name="movieTitle" value="Zardoz"> Zardoz<br>
+        <input type="checkbox" name="movieTitle" value="darkCrystal"> The Dark Crystal<br>
+      </div>
 
+      <div id ="showTimes" class="form-group">
+        <h3>Please Select a Showtime:</h3>
+        <input type="checkbox" id="matinee" name="showTime" value="matinee"> 4pm<br>
+        <input type="checkbox" id="middleMovie" name="showTime" value="middleMovie"> 7pm<br>
+        <input type="checkbox" id="lateShowing" name="showTime" value="lateShowing"> 9:30pm<br>
+      </div>
+
+      <div id ="ageRange" class="form-group">
+        <h3>Please select age range:</h3>
+        <input type="checkbox" id="child" name="ageRange" value="child"> Child/Youth Ticket (0-12 yrs old)<br>
+        <input type="checkbox" id="adult" name="ageRange" value="adult"> Adult Ticket<br>
+        <input type="checkbox" id="senior" name="ageRange" value="senior"> Senior Ticket (55+)<br>
+      </div>
+
+      <button type="submit" class="btn btn-dark">Purchase</button>
+    </form>
+
+    <div id="puchaseConfirm">
+      <p>You have purchased a ticket for <span class="movieChoice"></span> at <span class="showingTimeChoice"></span></p>
     </div>
-
-
-
-
-
-
   </body>
 </html>
