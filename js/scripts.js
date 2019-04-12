@@ -42,3 +42,21 @@ MovieTicket.prototype.priceByAgeRange = function() {
 function resetOptions() {
   $("input:checkbox").removeAttr("checked");
 }
+
+// UI Logic
+$(function() {
+  $("form").submit(function(event) {
+    event.preventDefault();
+
+    var selectedMovieName = $(".movieTitle input:checked");
+    var selectedShowTime = $(".showTime input:checked");
+    var selectedAgeRange = $(".ageRange input:checked");
+  });
+  // maybe up in Business?
+  var movieTicketPrice = new Ticket(selectedMovieName, selectedShowTime, selectedAgeRange);
+  var moviePrice = movieTicketPrice.priceByMovie();
+  var timePrice = movieTicketPrice.priceByTime();
+  var agePrice = movieTicketPrice.priceByAgeRange();
+  var totalTicketPrice = moviePrice + timePrice + agePrice;
+
+})
